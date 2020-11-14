@@ -3,4 +3,22 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
+.site_container{
+  width: 100%;
+  height: 100%;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a1f26;
+  align-items: center;
+}
+
+@import "intro"; 
