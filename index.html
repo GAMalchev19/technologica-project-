@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 2048</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
-      rel="stylesheet"
-    />
+
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/style.css" />
+
   </head>
+  
   <body>
+
     <div class="site_container">
+
+
       <!-- start of page one -->
       <div class="section">
+
         <section id="intro">
+
           <div class="header_wrapper">
-            <div><p>2</p></div>
-            <div><p>0</p></div>
-            <div><p>4</p></div>
-            <div><p>8</p></div>
+            <div class="number_holder"><p id="two" class="number"  data-speed="2.5">2</p></div>
+            <div class="number_holder"><p id="zero" class="number" data-speed="1.2">0</p></div>
+            <div class="number_holder"><p id="four" class="number" data-speed="1.2">4</p></div>
+            <div class="number_holder"><p id="eight" class="number" data-speed="2.5">8</p></div>
           </div>
 
           <a href="game.html" class="button_play">Play</a>
 
-          <a href="#about"><img src="images/arrow.png" class="arrow" /></a>
+
         </section>
+
       </div>
       <!-- end of page one -->
 
@@ -36,6 +45,16 @@
       <div class="section">
         <section id="about"></section>
       </div>
+
+
     </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script src="js/animations.js"></script>
+
+    <script src="js/parallax_logic.js"></script>
+
   </body>
 </html>
