@@ -52,6 +52,9 @@ html {
           align-items: center;
   width: 700px;
   height: 550px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 #intro .header_wrapper div {
@@ -72,24 +75,34 @@ html {
       -ms-flex-align: center;
           align-items: center;
   width: 125px;
+  -webkit-transition: border-right .3s, width .3s;
+  transition: border-right .3s, width .3s;
 }
 
 #intro .header_wrapper div:nth-child(1) p {
   margin-left: 125px;
   margin-bottom: 1900px;
+  -webkit-transition: margin-left .3s;
+  transition: margin-left .3s;
 }
 
 #intro .header_wrapper div:nth-child(2) p {
   margin-top: -1100px;
+  -webkit-transition: margin-bottom .3s;
+  transition: margin-bottom .3s;
 }
 
 #intro .header_wrapper div:nth-child(3) p {
   margin-top: -1100px;
+  -webkit-transition: margin-bottom .3s;
+  transition: margin-bottom .3s;
 }
 
 #intro .header_wrapper div:nth-child(4) p {
   margin-top: -1100px;
   margin-right: 125px;
+  -webkit-transition: margin-right .3s, margin-bottom .3s;
+  transition: margin-right .3s, margin-bottom .3s;
 }
 
 #intro .header_wrapper div:first-child {
@@ -119,13 +132,50 @@ html {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   margin-bottom: -500px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 #intro .button_play:hover {
   border-radius: 40px;
+  -webkit-box-shadow: 0 0 20px 2px #fd3075, 0.5rem 0.5rem 30px #7f183b;
+          box-shadow: 0 0 20px 2px #fd3075, 0.5rem 0.5rem 30px #7f183b;
 }
 
-#intro .button_play:hover ~ #two {
-  color: white;
+#intro .button_play:hover ~ .header_wrapper div:first-child {
+  border-right: 3px solid rgba(0, 0, 0, 0);
+  width: 1000px;
+}
+
+#intro .button_play:hover ~ .header_wrapper div:nth-child(2) {
+  border-right: 3px solid rgba(0, 0, 0, 0);
+  width: 1000px;
+}
+
+#intro .button_play:hover ~ .header_wrapper div:nth-child(3) {
+  border-right: 3px solid rgba(0, 0, 0, 0);
+  width: 1000px;
+}
+
+#intro .button_play:hover ~ .header_wrapper div:last-child {
+  width: 1000px;
+}
+
+#intro .button_play:hover ~ .header_wrapper div:first-child p {
+  margin-left: 0;
+}
+
+#intro .button_play:hover ~ .header_wrapper div:nth-child(2) p {
+  margin-bottom: 200px;
+}
+
+#intro .button_play:hover ~ .header_wrapper div:nth-child(3) p {
+  margin-bottom: 300px;
+}
+
+#intro .button_play:hover ~ .header_wrapper div:last-child p {
+  margin-right: 0;
+  margin-bottom: 490px;
 }
 /*# sourceMappingURL=style.css.map */

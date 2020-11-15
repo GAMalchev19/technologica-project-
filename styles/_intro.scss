@@ -16,6 +16,7 @@
     align-items: center;
     width: 700px;
     height: 550px;
+    order: 1;
 
     div {
       overflow: hidden;
@@ -26,24 +27,29 @@
       justify-content: center;
       align-items: center;
       width: 125px;
+      transition: border-right .3s, width .3s;
 
 
       &:nth-child(1) p {
         margin-left: 125px;
         margin-bottom: 1900px;
+        transition: margin-left .3s;
       }
 
       &:nth-child(2) p {
         margin-top: -1100px;
+        transition: margin-bottom .3s;
       }
 
       &:nth-child(3) p {
         margin-top: -1100px;
+        transition: margin-bottom .3s;
       }
 
       &:nth-child(4) p {
         margin-top: -1100px;
         margin-right: 125px;  
+        transition: margin-right .3s, margin-bottom .3s;
       }
 
 
@@ -77,13 +83,52 @@
     font-family: "Roboto";
     transition: 0.3s;
     margin-bottom: -500px;
+    order: 2;
     
     &:hover{
       border-radius: 40px;
+      box-shadow: 0 0 20px 2px #fd3075, 0.5rem 0.5rem 30px mix(black, #fd3075, 50%);
     }
 
-    &:hover ~ #two{
-      color: white;
+    &:hover ~ .header_wrapper div{
+
+
+      &:first-child {
+        border-right: 3px solid rgba(0, 0, 0, 0);
+        width: 1000px;
+      }
+
+      &:nth-child(2) {
+        border-right: 3px solid rgba(0, 0, 0, 0);
+        width: 1000px;
+      }
+
+      &:nth-child(3) {
+        border-right: 3px solid rgba(0, 0, 0, 0);
+        width: 1000px;
+      }
+
+      &:last-child{
+        width: 1000px;
+      }
+
+      &:first-child p{
+        margin-left: 0;
+      }
+
+      &:nth-child(2) p{
+        margin-bottom: 200px;
+      }
+
+      &:nth-child(3) p{
+        margin-bottom: 300px;
+      }
+
+      &:last-child p{
+        margin-right: 0;
+        margin-bottom: 490px;
+      }
+
     }
   }
 }
