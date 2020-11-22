@@ -3,4 +3,35 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  table {
+    tr {
+      height: 10rem;
+      min-width: 30rem;
+      td {
+        height: 10rem;
+        width: 10rem;
+        button {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 2rem;
+  }
 }

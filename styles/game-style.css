@@ -4,5 +4,44 @@ html {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.site-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.site-container h1 {
+  font-size: 5rem;
+}
+
+.site-container table tr {
+  height: 10rem;
+  min-width: 30rem;
+}
+
+.site-container table tr td {
+  height: 10rem;
+  width: 10rem;
+}
+
+.site-container table tr td button {
+  height: 100%;
+  width: 100%;
+}
+
+.site-container p {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=game-style.css.map */
