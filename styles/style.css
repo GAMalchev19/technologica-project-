@@ -4,6 +4,11 @@ html {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: hidden;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .site_container {
@@ -35,7 +40,7 @@ html {
 
 #intro .header_wrapper {
   color: #fd3075;
-  font-size: 22rem;
+  font-size: 21rem;
   font-family: 'Roboto';
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,7 +55,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 700px;
+  width: 800px;
   height: 550px;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -74,7 +79,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 125px;
+  width: 170px;
   -webkit-transition: border-right .3s, width .3s;
   transition: border-right .3s, width .3s;
 }
@@ -150,7 +155,7 @@ html {
 
 #intro .button_play:hover ~ .header_wrapper div:nth-child(2) {
   border-right: 3px solid rgba(0, 0, 0, 0);
-  width: 1000px;
+  width: 1100px;
 }
 
 #intro .button_play:hover ~ .header_wrapper div:nth-child(3) {
@@ -177,5 +182,107 @@ html {
 #intro .button_play:hover ~ .header_wrapper div:last-child p {
   margin-right: 0;
   margin-bottom: 490px;
+}
+
+#about {
+  margin: 0;
+  padding: 0;
+}
+
+#about .header {
+  top: 110%;
+  width: 94%;
+  border-bottom: 5px solid #fd3075;
+  position: absolute;
+  left: 3%;
+}
+
+#about .header h1 {
+  color: #fd3075;
+  font-size: 3rem;
+  font-family: 'Roboto';
+  position: absolute;
+  top: -110px;
+  left: 2%;
+}
+
+#about .content {
+  position: absolute;
+  color: #fd3075;
+  font-family: 'Roboto';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 80%;
+  top: 120%;
+  left: 10%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#about .content .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#about .content .text p {
+  width: 70%;
+}
+
+#about .content .pictures {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  z-index: 20;
+}
+
+#about .content .pictures div {
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 600px;
+  background-image: url("../images/Nikola.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 350px;
+}
+
+#about .content .pictures div:nth-child(1) {
+  background-image: url("../images/Boris.jpg");
+  background-size: auto;
+  background-position: top;
+  border-right: 3px solid #fd3075;
+}
+
+#about .content .pictures div:nth-child(2) {
+  background-image: url("../images/Adash.jpg");
+  background-size: auto;
+  background-position: top;
+  border-right: 3px solid #fd3075;
 }
 /*# sourceMappingURL=style.css.map */

@@ -8,13 +8,13 @@
 
   .header_wrapper {
     color: #fd3075;
-    font-size: 22rem;
+    font-size: 21rem;
     font-family: 'Roboto';
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 700px;
+    width: 800px;
     height: 550px;
     order: 1;
 
@@ -26,7 +26,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 125px;
+      width: 170px;
       transition: border-right .3s, width .3s;
 
 
@@ -39,6 +39,7 @@
       &:nth-child(2) p {
         margin-top: -1100px;
         transition: margin-bottom .3s;
+        
       }
 
       &:nth-child(3) p {
@@ -100,7 +101,7 @@
 
       &:nth-child(2) {
         border-right: 3px solid rgba(0, 0, 0, 0);
-        width: 1000px;
+        width: 1100px;
       }
 
       &:nth-child(3) {

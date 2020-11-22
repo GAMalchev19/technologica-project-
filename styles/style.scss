@@ -3,6 +3,13 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
+
+}
+
+html{
+  overflow-y: scroll;
+
 }
 
 .site_container {
@@ -15,4 +22,6 @@ html {
   background-color: #1a1f26;
 }
 
+
 @import "intro";
+@import "about"
