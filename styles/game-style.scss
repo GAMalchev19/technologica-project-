@@ -6,6 +6,16 @@ html {
   font-size: 62.5%;
 }
 
+.overlay{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+  backdrop-filter: blur(20px);
+  z-index: 100;
+  animation: overlayShow .5s;
+}
+
 
 body{
   background-color: #1a1f26;
@@ -88,9 +98,63 @@ body{
 }
 
 .clickedX{
-  animation: clickX .3s ease forwards .2s;
+  animation: clickX .3s;
 }
 
 .clickedO{
-  animation-name: clickO;
+  animation: clickO .3s;
 }
+
+.clickedX text{
+  stroke: #fd3075;
+  font-size: 600px;
+  font-weight: 200px;
+  stroke-width: 5;
+  animation: xSVG_anim .3s;
+  fill: #fd3075;
+}
+
+
+
+@keyframes clickO{
+
+  0%{
+    font-size: 0rem;
+  }
+
+  100%{
+    font-size: 7rem;
+  }
+}
+
+@keyframes xSVG_anim{
+
+  0%{
+    stroke-dasharray: 0 50%;
+    fill: #1f242c;
+  }
+
+  50%{
+    fill: #1f242c;
+  }
+
+  100%{
+    fill: #fd3075;
+    stroke-dasharray: 50% 0;
+  }
+
+
+}
+
+@keyframes overlayShow{
+ 
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 100%;
+    pointer-events: auto;
+  }
+}
+

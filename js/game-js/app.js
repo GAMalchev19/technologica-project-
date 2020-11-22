@@ -48,12 +48,14 @@ function put(wer, i)
 {
     if(!gameEnd){
         if (state) {
-            wer.innerHTML = "<span style='color: white;'>X</span>";
+            wer.innerHTML = "<svg viewBox='0 0 1350 600'><text x='50%' y='90%' text-anchor='middle' class='X'>X</text></svg>";
+            wer.classList.add("clickedX");
             states[i] = state;
             state = reverse(state);
         }
         else{
                 wer.innerHTML = "<span style=''>O</span>";
+                wer.classList.add("clickedO");
                 states[i] = state;
                 state = reverse(state);
         }
@@ -244,6 +246,7 @@ function winState(){
 function winDisplay(){
         gameEnd = true;
         document.getElementById("result").innerHTML = "You win!";
+        document.querySelector('.overlaynt').classList.add("overlay");
 }
 
 function loseDisplay(){
