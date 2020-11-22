@@ -6,6 +6,12 @@ html {
   font-size: 62.5%;
 }
 
+
+body{
+  background-color: #1a1f26;
+  color: #fd3075;
+}
+
 .site-container {
   display: flex;
   flex-direction: column;
@@ -17,15 +23,60 @@ html {
   }
 
   table {
+
+    margin-top: 20vh;
+
+    .row{
+      border-bottom: 3px solid #fd3075;
+    }
+
+    .test{
+      position: absolute;
+      top: 17%;
+      left: 37.7%;
+    }
+
+
     tr {
-      height: 10rem;
-      min-width: 30rem;
+      height: 15rem;
+      min-width: 35rem;
+
+
       td {
-        height: 10rem;
-        width: 10rem;
+        height: 15rem;
+        width: 15rem;
+        
+        &:nth-child(1){
+          border-right: 3px solid #fd3075;
+        }
+
+        &:nth-child(2){
+          border-right: 3px solid #fd3075;
+        }
+
+
+
+
         button {
           height: 100%;
           width: 100%;
+          background: transparent;
+          border-style: none;
+          color:#fd3075;
+          font-family: 'Roboto';
+          font-size: 7rem;
+          transition: .3s;
+          
+
+          &:hover{
+            background-color: #1f242c;
+            cursor: pointer;
+          }
+
+          &:focus{
+            outline: none;
+          }
+          
         }
       }
     }
@@ -34,4 +85,12 @@ html {
   p {
     font-size: 2rem;
   }
+}
+
+.clickedX{
+  animation: clickX .3s ease forwards .2s;
+}
+
+.clickedO{
+  animation-name: clickO;
 }

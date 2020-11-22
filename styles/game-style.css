@@ -7,6 +7,11 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #1a1f26;
+  color: #fd3075;
+}
+
 .site-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,22 +31,70 @@ html {
   font-size: 5rem;
 }
 
+.site-container table {
+  margin-top: 20vh;
+}
+
+.site-container table .row {
+  border-bottom: 3px solid #fd3075;
+}
+
+.site-container table .test {
+  position: absolute;
+  top: 17%;
+  left: 37.7%;
+}
+
 .site-container table tr {
-  height: 10rem;
-  min-width: 30rem;
+  height: 15rem;
+  min-width: 35rem;
 }
 
 .site-container table tr td {
-  height: 10rem;
-  width: 10rem;
+  height: 15rem;
+  width: 15rem;
+}
+
+.site-container table tr td:nth-child(1) {
+  border-right: 3px solid #fd3075;
+}
+
+.site-container table tr td:nth-child(2) {
+  border-right: 3px solid #fd3075;
 }
 
 .site-container table tr td button {
   height: 100%;
   width: 100%;
+  background: transparent;
+  border-style: none;
+  color: #fd3075;
+  font-family: 'Roboto';
+  font-size: 7rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.site-container table tr td button:hover {
+  background-color: #1f242c;
+  cursor: pointer;
+}
+
+.site-container table tr td button:focus {
+  outline: none;
 }
 
 .site-container p {
   font-size: 2rem;
+}
+
+.clickedX {
+  -webkit-animation: clickX .3s ease forwards .2s;
+          animation: clickX .3s ease forwards .2s;
+}
+
+.clickedO {
+  -webkit-animation-name: clickO;
+          animation-name: clickO;
 }
 /*# sourceMappingURL=game-style.css.map */

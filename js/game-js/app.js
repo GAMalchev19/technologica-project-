@@ -48,12 +48,12 @@ function put(wer, i)
 {
     if(!gameEnd){
         if (state) {
-            wer.innerHTML = "X";
+            wer.innerHTML = "<span style='color: white;'>X</span>";
             states[i] = state;
             state = reverse(state);
         }
         else{
-                wer.innerHTML = "O";
+                wer.innerHTML = "<span style=''>O</span>";
                 states[i] = state;
                 state = reverse(state);
         }
