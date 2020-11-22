@@ -24,6 +24,7 @@ btns.forEach(item => {
 const btns = document.querySelectorAll('.btn');
 let states = [];
 let state = true; // true = X // false = O
+let gameEnd = false;
 
 for (let i = 0; i < btns.length; i++)
 {
@@ -31,27 +32,226 @@ for (let i = 0; i < btns.length; i++)
     btns[i].addEventListener("click", () => {
         if(btns[i].classList.contains("clickable"))
         {
-            put(btns[i]);
+            put(btns[i], i);
+            winState();
             komputer();
+            winState();
         }
     });
-    
 }
 
-function reverse(val)
-{
+function reverse(val){
     return !val;
 }
 
-function put(wer)
+function put(wer, i)
 {
-    if (state) {
-        wer.innerHTML = "X";
-        state = reverse(state);
+    if(!gameEnd){
+        if (state) {
+            wer.innerHTML = "X";
+            states[i] = state;
+            state = reverse(state);
+        }
+        else{
+                wer.innerHTML = "O";
+                states[i] = state;
+                state = reverse(state);
+        }
+        wer.classList.remove("clickable");
+    }  
+}
+
+function komputer(){
+    if(!gameEnd){
+        /*let index;
+
+        //counter row
+        if((states[0] === true && states[1] === true && states[2] === undefined) || (states[0] === true && states[1] === undefined && states[2] === true) || (states[0] === undefined && states[1] === true && states[2] === true)){
+            for(let i = 0; i < 3; i++){
+                if(states[i] === undefined)
+                    index = i;
+            }
+            console.log(index);
+            put(btns[index], index);
+        }
+
+        else if((states[3] === true && states[4] === true && states[5] === undefined) || (states[3] === true && states[4] === undefined && states[5] === true) || (states[3] === undefined && states[4] === true && states[5] === true)){
+            for(let i = 0; i < 3; i++){
+                if(states[i] === undefined)
+                    index = i;
+            }
+            console.log(index);
+            put(btns[index], index);
+        }
+
+        else if((states[6] === true && states[7] === true && states[8] === undefined) || (states[6] === true && states[7] === undefined && states[8] === true) || (states[6] === undefined && states[7] === true && states[8] === true)){
+            for(let i = 0; i < 3; i++){
+                if(states[i] === undefined)
+                    index = i;
+            }
+            console.log(index);
+            put(btns[index], index);
+        }
+
+        //counter diagonal
+        else if((states[0] === true && states[4] === true && states[8] === undefined) || (states[0] === true && states[4] === undefined && states[8] === true) || (states[0] === undefined && states[4] === true && states[8] === true)){
+            for(let i = 0; i < 3; i++){
+                if(states[i] === undefined)
+                    index = i;
+            }
+            console.log(index);
+            put(btns[index], index);
+        }
+
+        else if((states[2] === true && states[4] === true && states[6] === undefined) || (states[2] === true && states[4] === undefined && states[6] === true) || (states[2] === undefined && states[4] === true && states[6] === true)){
+            for(let i = 0; i < 3; i++){
+                if(states[i] === undefined)
+                    index = i;
+            }
+            console.log(index);
+            put(btns[index], index);
+        }
+
+        //counter column
+        else if((states[0] === true && states[3] === true && states[6] === undefined) || (states[0] === true && states[3] === undefined && states[6] === true) || (states[0] === undefined && states[3] === true && states[6] === true)){
+            for(let i = 0; i < 3; i++){
+                if(states[i] === undefined)
+                    index = i;
+            }
+            console.log(index);
+            put(btns[index], index);
+        }
+
+        else if((states[1] === true && states[4] === true && states[7] === undefined) || (states[1] === true && states[4] === undefined && states[7] === true) || (states[1] === undefined && states[4] === true && states[7] === true)){
+            for(let i = 0; i < 3; i++){
+                if(states[i] === undefined)
+                    index = i;
+            }
+            console.log(index);
+            put(btns[index], index);
+        }
+
+        else if((states[2] === true && states[5] === true && states[8] === undefined) || (states[2] === true && states[5] === undefined && states[8] === true) || (states[2] === undefined && states[5] === true && states[8] === true)){
+            for(let i = 0; i < 3; i++){
+                if(states[i] === undefined)
+                    index = i;
+            }
+            console.log(index);
+            put(btns[index], index);
+        }
+
+        else{*/
+            let randNum = Math.trunc(Math.random()*10)
+            console.log(randNum);
+            if(states[randNum] === undefined && randNum != 9)
+                put(btns[randNum], randNum);
+            else
+                komputer();
+        //}
     }
-    else{
-        wer.innerHTML = "O";
-        state = reverse(state);
+}
+
+function boardFull(){
+    /*states.forEach(stat => {
+        if(stat === undefined)
+            return false;
+    });
+    return true;*/
+    if(!gameEnd){
+        for(let i = 0; i < 9; i++){
+            if(states[i]===undefined)
+                return false;
+        }
+        gameEnd = true;
+        drawDisplay();
+        return true;
     }
-    wer.classList.remove("clickable");
+}
+
+function winState(){
+    if(!gameEnd){
+
+        //row check
+        if(states[0] == states[1] && states[1] == states[2]){
+            if(states[0])
+                winDisplay();
+            else if(states[0]==false)
+                loseDisplay();
+        }
+
+        if(states[3] == states[4] && states[4] == states[5]){
+            if(states[3])
+                winDisplay();
+            else if(states[3]==false)
+                loseDisplay();
+            
+        }
+
+        if(states[6] == states[7] && states[7] == states[8]){
+            if(states[6])
+                winDisplay();
+            else if(states[6]==false)
+                loseDisplay();
+                
+        }
+
+
+        //diagonal check
+        if(states[0] == states[4] && states[4] == states[8]){
+            if(states[0])
+                winDisplay();
+            else if(states[0]==false)
+                loseDisplay();
+            
+        }
+
+        if(states[2] == states[4] && states[4] == states[6]){
+            if(states[2])
+                winDisplay();
+            else if(states[2]==false)
+                loseDisplay();
+            
+        }
+
+
+        //column check
+        if(states[0] == states[3] && states[3] == states[6]){
+            if(states[0])
+                winDisplay();
+            else if(states[0]==false)
+                loseDisplay();
+            
+        }
+
+        if(states[1] == states[4] && states[4] == states[7]){
+            if(states[1])
+                winDisplay();
+            else if(states[1]==false)
+                loseDisplay();        
+            
+        }
+
+        if(states[2] == states[5] && states[5] == states[8]){
+            if(states[2])
+                winDisplay();
+            else if(states[2]==false)
+                loseDisplay();
+            
+        }
+    }   
+}
+
+function winDisplay(){
+        gameEnd = true;
+        document.getElementById("result").innerHTML = "You win!";
+}
+
+function loseDisplay(){
+        gameEnd = true;
+        document.getElementById("result").innerHTML = "You lose!";
+   
+}
+
+function drawDisplay(){
+    document.getElementById("result").innerHTML = "Draw!";
 }
