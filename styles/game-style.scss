@@ -7,14 +7,36 @@ html {
 }
 
 .overlay{
+  opacity: 0;
   position: absolute;
   height: 100vh;
   width: 100%;
   pointer-events: none;
   backdrop-filter: blur(20px);
   z-index: 100;
-  animation: overlayShow .5s;
+  animation: overlayShow .9s ease forwards .8s;
+  animation-delay: 1s;
 }
+
+.overlaySVG_show{
+  animation: svgShow 6s ease forwards .8s;
+}
+
+.overlaynt{
+  position: absolute;
+
+  svg text{
+    width: 100%;
+    stroke: #fd3075;
+    font-size: 15rem;
+    stroke-width: 5;
+    z-index: 10;
+    font-family: 'Roboto';
+    opacity: 0;
+  }
+
+}
+
 
 
 body{
@@ -35,6 +57,7 @@ body{
   table {
 
     margin-top: 20vh;
+    border-collapse: collapse;
 
     .row{
       border-bottom: 3px solid #fd3075;
@@ -147,14 +170,22 @@ body{
 }
 
 @keyframes overlayShow{
- 
-  0%{
-    opacity: 0;
-  }
 
   100%{
     opacity: 100%;
     pointer-events: auto;
   }
+}
+
+@keyframes svgShow{
+  0%{
+    stroke-dasharray: 0 50%;
+    opacity: 0;
+  }
+
+  100%{
+    stroke-dasharray: 50% 0;
+    opacity: 100%;
+   }
 }
 

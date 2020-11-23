@@ -41,8 +41,16 @@ anime({
 
   anime({
     targets: '.button_play',
-    marginBottom: "-10px",
+    marginBottom: "100px",
     delay: 2500,
     duration: 500,
+  });
+
+  anime({
+    targets: '.arrow',
+    marginBottom: '150px',
+    delay: 3500,
+    duration: 500,
+    easing: 'easeOutQuart'
   });
 

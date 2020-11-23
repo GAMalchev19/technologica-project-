@@ -247,12 +247,14 @@ function winDisplay(){
         gameEnd = true;
         document.getElementById("result").innerHTML = "You win!";
         document.querySelector('.overlaynt').classList.add("overlay");
+        document.querySelector('.overlay_svgV').classList.add("overlaySVG_show");
 }
 
 function loseDisplay(){
         gameEnd = true;
         document.getElementById("result").innerHTML = "You lose!";
-   
+        document.querySelector('.overlaynt').classList.add("overlay");
+        document.querySelector('.overlay_svgL').classList.add("overlaySVG_show");
 }
 
 function drawDisplay(){

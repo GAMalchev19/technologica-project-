@@ -5,6 +5,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -36,6 +37,11 @@ html {
           align-items: center;
   width: 100%;
   height: 100vh;
+}
+
+#intro .arrow {
+  position: absolute;
+  bottom: -10%;
 }
 
 #intro .header_wrapper {
