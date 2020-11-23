@@ -8,8 +8,49 @@ html {
   scroll-behavior: smooth;
 }
 
-html {
-  overflow-y: scroll;
+.arrowToIntro_shown {
+  -webkit-animation: showArrowToIntro .5s ease forwards .2s;
+          animation: showArrowToIntro .5s ease forwards .2s;
+}
+
+.arrowToIntro_hidden {
+  -webkit-animation: hideArrowToIntro .5s ease forwards .2s;
+          animation: hideArrowToIntro .5s ease forwards .2s;
+}
+
+.arrowToAbout_shown {
+  -webkit-animation: showArrowToAbout .5s ease forwards .2s;
+          animation: showArrowToAbout .5s ease forwards .2s;
+}
+
+.arrowToAbout_hidden {
+  -webkit-animation: hideArrowToAbout .5s ease forwards .2s;
+          animation: hideArrowToAbout .5s ease forwards .2s;
+}
+
+.nav_overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+}
+
+.nav_overlay .arrowToAbout {
+  position: absolute;
+  bottom: -5%;
+  left: 48.5%;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+.nav_overlay .arrowToIntro {
+  position: absolute;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  left: 48.5%;
+  top: -5%;
 }
 
 .site_container {
@@ -20,6 +61,60 @@ html {
 .section {
   min-height: 100vh;
   background-color: #1a1f26;
+}
+
+@-webkit-keyframes showArrowToIntro {
+  100% {
+    top: 5%;
+  }
+}
+
+@keyframes showArrowToIntro {
+  100% {
+    top: 5%;
+  }
+}
+
+@-webkit-keyframes showArrowToAbout {
+  100% {
+    bottom: 5%;
+  }
+}
+
+@keyframes showArrowToAbout {
+  100% {
+    bottom: 5%;
+  }
+}
+
+@-webkit-keyframes hideArrowToIntro {
+  100% {
+    top: -5%;
+  }
+}
+
+@keyframes hideArrowToIntro {
+  100% {
+    top: -5%;
+  }
+}
+
+@-webkit-keyframes hideArrowToAbout {
+  0% {
+    bottom: 5%;
+  }
+  100% {
+    bottom: -5%;
+  }
+}
+
+@keyframes hideArrowToAbout {
+  0% {
+    bottom: 5%;
+  }
+  100% {
+    bottom: -5%;
+  }
 }
 
 #intro {
@@ -39,9 +134,39 @@ html {
   height: 100vh;
 }
 
-#intro .arrow {
+#intro .background {
   position: absolute;
-  bottom: -10%;
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+}
+
+#intro .background #X {
+  position: absolute;
+  top: -80%;
+  margin-left: -50vh;
+  -webkit-transform: rotateZ(-25deg);
+          transform: rotateZ(-25deg);
+  font-family: 'Roboto';
+  font-size: 35rem;
+  color: #1f242c;
+  -webkit-animation: xShow .7s ease forwards .1s;
+          animation: xShow .7s ease forwards .1s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+#intro .background #O {
+  position: absolute;
+  right: -10%;
+  margin-right: -20vh;
+  font-family: 'Roboto';
+  font-size: 35rem;
+  color: #1f242c;
+  -webkit-animation: oShow .9s ease forwards .2s;
+          animation: oShow .9s ease forwards .2s;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
 }
 
 #intro .header_wrapper {
@@ -146,6 +271,7 @@ html {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  z-index: 2;
 }
 
 #intro .button_play:hover {
@@ -188,6 +314,52 @@ html {
 #intro .button_play:hover ~ .header_wrapper div:last-child p {
   margin-right: 0;
   margin-bottom: 490px;
+}
+
+@-webkit-keyframes xShow {
+  100% {
+    margin-left: 0;
+    -webkit-transform: rotateZ(25deg);
+            transform: rotateZ(25deg);
+  }
+}
+
+@keyframes xShow {
+  100% {
+    margin-left: 0;
+    -webkit-transform: rotateZ(25deg);
+            transform: rotateZ(25deg);
+  }
+}
+
+@-webkit-keyframes oShow {
+  100% {
+    margin-right: 0;
+    -webkit-transform: rotateZ(-15deg);
+            transform: rotateZ(-15deg);
+  }
+}
+
+@keyframes oShow {
+  100% {
+    margin-right: 0;
+    -webkit-transform: rotateZ(-15deg);
+            transform: rotateZ(-15deg);
+  }
+}
+
+@-webkit-keyframes arrowAbout_hide {
+  100% {
+    position: fixed;
+    bottom: -25%;
+  }
+}
+
+@keyframes arrowAbout_hide {
+  100% {
+    position: fixed;
+    bottom: -25%;
+  }
 }
 
 #about {
@@ -272,21 +444,21 @@ html {
       -ms-flex-align: center;
           align-items: center;
   height: 600px;
-  background-image: url("../images/Nikola.jpeg");
+  background-image: url("../images/Peshev.jpeg");
   background-size: cover;
   background-position: center;
   width: 350px;
 }
 
 #about .content .pictures div:nth-child(1) {
-  background-image: url("../images/Boris.jpg");
+  background-image: url("../images/Savov.jpg");
   background-size: auto;
   background-position: top;
   border-right: 3px solid #fd3075;
 }
 
 #about .content .pictures div:nth-child(2) {
-  background-image: url("../images/Adash.jpg");
+  background-image: url("../images/Simeonov.jpg");
   background-size: auto;
   background-position: top;
   border-right: 3px solid #fd3075;

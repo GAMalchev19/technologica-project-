@@ -66,17 +66,12 @@ body {
 }
 
 .site-container table {
-  margin-top: 20vh;
+  margin-top: 15vh;
+  border-collapse: collapse;
 }
 
 .site-container table .row {
   border-bottom: 3px solid #fd3075;
-}
-
-.site-container table .test {
-  position: absolute;
-  top: 17%;
-  left: 37.7%;
 }
 
 .site-container table tr {

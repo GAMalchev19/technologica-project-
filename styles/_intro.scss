@@ -7,10 +7,37 @@
   height: 100vh;
 
 
-  .arrow{
+  .background{
     position: absolute;
-    bottom: -10%;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+
+    #X{
+      position: absolute;
+      top: -80%;
+      margin-left: -50vh;
+      transform: rotateZ(-25deg);
+      font-family: 'Roboto';
+      font-size: 35rem;
+      color: #1f242c;
+      animation: xShow .7s ease forwards .1s;
+      animation-delay: 3s;
+    }
+
+    #O{
+      position: absolute;
+      right: -10%;
+      margin-right: -20vh;
+      font-family: 'Roboto';
+      font-size: 35rem;
+      color: #1f242c;
+      animation: oShow .9s ease forwards .2s;
+      animation-delay: 2.8s;
+    }
   }
+
+
 
   .header_wrapper {
     color: #fd3075;
@@ -91,6 +118,7 @@
     transition: 0.3s;
     margin-bottom: -500px;
     order: 2;
+    z-index: 2;
     
     &:hover{
       border-radius: 40px;
@@ -139,3 +167,28 @@
     }
   }
 }
+
+@keyframes xShow{
+
+  100%{
+    margin-left: 0;
+    transform: rotateZ(25deg);
+  }
+}
+
+
+@keyframes oShow{
+
+  100%{
+    margin-right: 0;
+    transform: rotateZ(-15deg);
+  }
+}
+
+@keyframes arrowAbout_hide{
+  100%{
+    position: fixed;
+    bottom: -25%;
+  }
+}
+

@@ -18,6 +18,11 @@
   
   <body>
 
+    <div class="nav_overlay">
+      <a href="#about"  class="arrowToAbout arrowToAbout_shown" id="arrowToAbout"onclick="onArrowToAboutPress()"><img src="images/arrow.png"></a>
+      <a href="#intro"  class="arrowToIntro" onclick="onArrowToIntroPress()"><img src="images/arrow.png"></a>
+    </div>
+
     <div class="site_container">
 
 
@@ -25,6 +30,11 @@
       <div class="section">
 
         <section id="intro">
+
+          <div class="background">
+            <h1 id="X">X</h1>
+            <h1 id="O">O</h1>
+          </div>
 
 
           <a href="html/game.html" class="button_play">Play</a>
@@ -37,7 +47,7 @@
             <div class="number_holder"><p id="eight" class="number" data-speed="2.5">O</p></div>
           </div>
 
-          <a href="#about"  class="arrow"><img src="images/arrow.png"></a>
+
 
 
         </section>
@@ -84,6 +94,8 @@
     <script src="js/animations.js"></script>
 
     <script src="js/parallax_logic.js"></script>
+
+    <script src="js/handle_buttons.js"></script>
 
   </body>
 </html>

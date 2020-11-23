@@ -8,8 +8,45 @@ html {
 
 }
 
-html{
-  overflow-y: scroll;
+.arrowToIntro_shown{
+  animation: showArrowToIntro .5s ease forwards .2s;
+}
+
+.arrowToIntro_hidden{
+  animation: hideArrowToIntro .5s ease forwards .2s;
+}
+
+.arrowToAbout_shown{
+  animation: showArrowToAbout .5s ease forwards .2s;
+}
+
+.arrowToAbout_hidden{
+  animation: hideArrowToAbout .5s ease forwards .2s;
+}
+
+
+
+.nav_overlay{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+
+  .arrowToAbout{
+    position: absolute;
+    bottom: -5%;
+    left: 48.5%;
+    animation-delay: 3.5s; 
+  }
+
+  .arrowToIntro{
+    position: absolute;
+    transform: rotateZ(180deg);
+    left: 48.5%;
+    top: -5%;
+  }
 
 }
 
@@ -22,6 +59,37 @@ html{
   min-height: 100vh;
   background-color: #1a1f26;
 }
+
+@keyframes showArrowToIntro{
+  100%{
+    top: 5%;
+  }
+}
+
+@keyframes showArrowToAbout{
+  100%{
+    bottom: 5%;
+  }
+}
+
+@keyframes hideArrowToIntro{
+
+  100%{
+    top: -5%;
+  }
+}
+
+@keyframes hideArrowToAbout{
+  0%{
+    bottom: 5%;
+  }
+  
+  100%{
+    bottom: -5%;
+  }
+}
+
+
 
 
 @import "intro";

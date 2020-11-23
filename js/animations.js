@@ -46,11 +46,4 @@ anime({
     duration: 500,
   });
 
-  anime({
-    targets: '.arrow',
-    marginBottom: '150px',
-    delay: 3500,
-    duration: 500,
-    easing: 'easeOutQuart'
-  });
 
