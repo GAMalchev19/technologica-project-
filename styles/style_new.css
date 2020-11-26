@@ -1,0 +1,78 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #0f0f2b;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.site-container {
+  width: 100%;
+  height: 100%;
+}
+
+.site-container .art-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.site-container .art-container .second-detail {
+  position: relative;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(-10%);
+          transform: translateX(-10%);
+}
+
+.site-container .art-container .second-detail img {
+  position: absolute;
+  z-index: 3;
+}
+
+.site-container .art-container .Planet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -48%);
+          transform: translate(-50%, -48%);
+  z-index: 1;
+}
+
+.site-container .art-container .first-detail {
+  position: relative;
+  top: 2000px;
+}
+
+.site-container .art-container .first-detail img {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+}
+
+.site-container .art-container .stars {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.site-container .art-container .stars img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-83%, -30%);
+          transform: translate(-83%, -30%);
+  z-index: 1;
+  height: 800px;
+}
+/*# sourceMappingURL=style_new.css.map */
