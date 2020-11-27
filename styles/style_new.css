@@ -6,6 +6,7 @@ html {
 
 body {
   background-color: #0f0f2b;
+  overflow-x: hidden;
 }
 
 section {
@@ -28,7 +29,7 @@ section {
 
 .site-container .art-container .second-detail {
   position: relative;
-  top: 0;
+  top: -2%;
   left: 0;
   -webkit-transform: translateX(-10%);
           transform: translateX(-10%);
@@ -36,27 +37,28 @@ section {
 
 .site-container .art-container .second-detail img {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
 }
 
 .site-container .art-container .Planet {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 20%;
+  top: -5%;
   -webkit-transform: translate(-50%, -48%);
           transform: translate(-50%, -48%);
-  z-index: 1;
+  z-index: 2;
 }
 
 .site-container .art-container .first-detail {
   position: relative;
   top: 2000px;
+  right: 1.4%;
 }
 
 .site-container .art-container .first-detail img {
   position: absolute;
   bottom: 0;
-  z-index: 3;
+  z-index: 5;
 }
 
 .site-container .art-container .stars {
@@ -66,13 +68,31 @@ section {
   height: 100%;
 }
 
-.site-container .art-container .stars img {
+.site-container .art-container .stars #star-bg {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 45%;
   -webkit-transform: translate(-83%, -30%);
           transform: translate(-83%, -30%);
   z-index: 1;
-  height: 800px;
+  height: 600px;
+}
+
+.site-container .art-container .stars #star-mg {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  -webkit-transform: translate(-83%, -30%);
+          transform: translate(-83%, -30%);
+  z-index: 3;
+  height: 170px;
+}
+
+.site-container .art-container .stars #star-fr {
+  position: absolute;
+  height: 1200px;
+  top: 10%;
+  left: 7%;
+  z-index: 4;
 }
 /*# sourceMappingURL=style_new.css.map */

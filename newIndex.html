@@ -15,24 +15,31 @@
       </div>
 
       <div class="art-container">
-        <img src="images/svgs/Planet.svg" class="Planet" />
+        <img src="images/svgs/Planet.svg" class="Planet  parallax-layer" data-speed="-0.3"/>
 
         <div class="second-detail">
-          <img src="images/svgs/SecondDetail-background.svg" />
-          <img src="images/svgs/SecondDetail-midground.svg" />
-          <img src="images/svgs/SecondDetail-foreground.svg" />
+          <img src="images/svgs/SecondDetail-background.svg" class="parallax-layer" data-speed="1"/>
+          <img src="images/svgs/SecondDetail-midground.svg" class="parallax-layer" data-speed="1.5"/>
+          <img src="images/svgs/SecondDetail-foreground.svg" class="parallax-layer" data-speed="2"/>
         </div>
 
         <div class="first-detail">
-          <img src="images/svgs/MainDetail-background.svg" />
-          <img src="images/svgs/MainDetail-midground.svg" />
-          <img src="images/svgs/MainDetail-foreground.svg" />
+          <img src="images/svgs/MainDetail-background.svg" class="parallax-layer" data-speed="1"/>
+          <img src="images/svgs/MainDetail-midground.svg" class="parallax-layer" data-speed="1.5"/>
+          <img src="images/svgs/MainDetail-foreground2.svg" class="parallax-layer" data-speed="2"/>
         </div>
 
         <div class="stars">
-          <img id="star-bg" src="images/svgs/Stars-midground.svg" />
+          <img id="star-bg" src="images/svgs/Stars-background.svg" class="parallax-layer" data-speed="0.2"/>
+          <img id="star-mg" src="images/svgs/Stars-midground.svg" class="parallax-layer" data-speed="0.5"/>
+          <img id="star-fr" src="images/svgs/Stars-foreground.svg" class="parallax-layer" data-speed="0.8"/>
         </div>
       </div>
     </div>
+
+
+    <script src="js/parallax_logic.js"></script>
+
+
   </body>
 </html>
