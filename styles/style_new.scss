@@ -11,12 +11,45 @@ body {
 
 section {
   width: 100%;
-  min-height: 100vh;
+  min-height : 100vh;
 }
 
 .site-container {
   width: 100%;
   height: 100%;
+
+  .sections-container{
+    z-index: 10;
+
+    .intro{
+      position: absolute;
+      top: 0;
+      left: 0;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+
+      div{
+        flex: 1;
+        height: 10%;
+
+        span{
+          color: #df2a6f;
+        }
+      }
+      
+      .title{
+        z-index: 10;
+        font-family: 'Roboto';
+        font-size: 12rem;
+        color: #6b7e95;
+        flex: 2;
+      }
+    }
+
+  }
+
   .art-container {
     position: absolute;
     top: 0;
