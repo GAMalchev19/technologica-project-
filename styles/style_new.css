@@ -27,6 +27,68 @@ section {
   height: 100%;
 }
 
+.site-container .art-container .clouds {
+  position: relative;
+  z-index: 6;
+  top: 100%;
+}
+
+.site-container .art-container .clouds img {
+  position: absolute;
+}
+
+.site-container .art-container .clouds img:nth-child(1) {
+  left: 15%;
+  bottom: 10%;
+  height: 90px;
+}
+
+.site-container .art-container .clouds img:nth-child(2) {
+  right: 25%;
+  height: 100px;
+  bottom: 100%;
+}
+
+.site-container .art-container .clouds img:nth-child(3) {
+  position: absolute;
+  height: 200px;
+  bottom: 100px;
+  right: -5%;
+}
+
+.site-container .art-container .clouds img:nth-child(4) {
+  position: absolute;
+  height: 200px;
+  bottom: 550px;
+  right: -4%;
+}
+
+.site-container .art-container .clouds img:nth-child(5) {
+  right: 25%;
+  height: 100px;
+  bottom: 870px;
+}
+
+.site-container .art-container .clouds img:nth-child(6) {
+  left: 25%;
+  height: 90px;
+  bottom: 870px;
+}
+
+.site-container .art-container .clouds img:nth-child(7) {
+  position: absolute;
+  height: 200px;
+  bottom: 640px;
+  left: -1.2%;
+}
+
+.site-container .art-container .clouds img:nth-child(8) {
+  position: absolute;
+  height: 220px;
+  bottom: 100px;
+  left: -1.2%;
+}
+
 .site-container .art-container .second-detail {
   position: relative;
   top: -2%;
