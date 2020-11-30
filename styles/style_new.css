@@ -11,7 +11,7 @@ body {
 
 section {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .site-container {
@@ -23,12 +23,64 @@ section {
   /*intro art container end*/
 }
 
+.site-container .sections-container {
+  width: 100%;
+  height: 100%;
+  font-size: 10pt;
+}
+
+.site-container .sections-container .intro {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.site-container .sections-container .intro h1 {
+  z-index: 1;
+}
+
+.site-container .sections-container .intro h1 span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10rem;
+  display: block;
+  color: #6996a5;
+}
+
+.site-container .sections-container .intro button {
+  z-index: 1;
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  background: #265768;
+}
+
+.site-container .sections-container .intro button:focus {
+  outline: none;
+}
+
 .site-container .game-art-container {
   position: absolute;
   top: -215%;
   left: 0;
   width: 100%;
   height: 200vh;
+  z-index: 2;
 }
 
 .site-container .game-art-container .clouds {
@@ -160,5 +212,90 @@ section {
   top: 10%;
   left: 7%;
   z-index: 4;
+}
+
+.site-container .intro-art-container {
+  height: 200vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  top: 0;
+  left: 0;
+}
+
+.site-container .intro-art-container .background {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.site-container .intro-art-container .background #stars {
+  top: 1%;
+  width: 1911px;
+}
+
+.site-container .intro-art-container .background .moon {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  top: 340px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.site-container .intro-art-container .background .moon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.site-container .intro-art-container .background .moon img:nth-child(1) {
+  width: 310px;
+}
+
+.site-container .intro-art-container .background .moon img:nth-child(2) {
+  width: 380px;
+}
+
+.site-container .intro-art-container .background .moon img:nth-child(3) {
+  width: 268px;
+}
+
+.site-container .intro-art-container .background img {
+  position: absolute;
+  width: 1920px;
+  bottom: 0;
+  left: 0;
+}
+
+.site-container .intro-art-container .midground {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.site-container .intro-art-container .midground img {
+  width: 1900px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.site-container .intro-art-container .foreground {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.site-container .intro-art-container .foreground img {
+  width: 1920px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 /*# sourceMappingURL=style_new.css.map */

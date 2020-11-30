@@ -11,10 +11,8 @@
     <div class="site-container">
       <div class="sections-container">
         <section class="intro">
-          <div></div>
-          <div class="title"><span>X</span>O</div>
-          <div class="title">T<span>O</span></div>
-          <div></div>
+          <h1><span>XO</span><span>TO</span></h1>
+          <button id="game-trigger">PLAY</button>
         </section>
 
         <section class="about"></section>
@@ -60,18 +58,18 @@
 
 
       <div class="intro-art-container">
-        <div class="top-section">
 
           <div class="background">
             <img src="images/svgs/Intro/Background.svg">
 
-          <!--
-            <div class="Moon">
+            <img id="stars" src="images/svgs/Intro/Stars.svg">
+
+            <div class="moon">
               <img src="images/svgs/Intro/Moon-background.svg">
               <img src="images/svgs/Intro/Moon-midground.svg">
               <img src="images/svgs/Intro/Moon-foreground.svg">
             </div>
-          -->
+
 
 
             <img src="images/svgs/Intro/Background3.svg">
@@ -79,26 +77,23 @@
             <img src="images/svgs/Intro/Background1.svg">
           </div>
 
-         
-        <!--
+
+
           <div class="midground">
             <img src="images/svgs/Intro/Midground3.svg">
             <img src="images/svgs/Intro/Midground2.svg">
             <img src="images/svgs/Intro/Midground1.svg">
           </div>
 
-        -->
 
-
-        <!--
+        
           <div class="foreground">
             <img src="images/svgs/Intro/Foreground3.svg">
             <img src="images/svgs/Intro/Foreground2.svg">
             <img src="images/svgs/Intro/Foreground1.svg">
           </div>
-        -->
-        
-        </div>
+
+
       </div>
 
 
@@ -112,8 +107,10 @@
 
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="js/parallax_logic.js"></script>
+    <script src="js/handle-scrolling.js"></script>
+
 
 
   </body>
