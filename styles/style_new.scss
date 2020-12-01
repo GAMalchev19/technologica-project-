@@ -206,12 +206,13 @@ section {
     top: 0;
     top: 0;
     left: 0;
+    overflow: hidden;
 
     .background {
       height: 100%;
       width: 100%;
       position: relative;
-
+  
       #stars {
         top: 1%;
         width: 1911px;

@@ -10,3 +10,5 @@ function parralax(e){
         Layer.style.transform = `translateX(${x}px)  translateY(${y}px)`
     })
 }
+
+var rellax = new Rellax('.rellax');
