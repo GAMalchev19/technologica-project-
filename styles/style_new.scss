@@ -206,7 +206,7 @@ section {
     top: 0;
     top: 0;
     left: 0;
-    overflow: hidden;
+    overflow-y: hidden;
 
     .background {
       height: 100%;
@@ -246,7 +246,6 @@ section {
       img {
         position: absolute;
         width: 1920px;
-
         bottom: 0;
         left: 0;
       }

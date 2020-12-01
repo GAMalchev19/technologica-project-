@@ -11,4 +11,5 @@ function parralax(e){
     })
 }
 
+
 var rellax = new Rellax('.rellax');
