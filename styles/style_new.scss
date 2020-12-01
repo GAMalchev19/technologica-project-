@@ -23,6 +23,7 @@ section {
     height: 100%;
     font-size: 10pt;
 
+
     .intro {
       width: 100%;
       height: 100vh;
@@ -68,6 +69,63 @@ section {
     width: 100%;
     height: 200vh;
     z-index: 2;
+
+      table {
+        position: absolute;
+        z-index: 669;
+        left: 50%;
+        top: 3%;
+        transform: translateX(-50%);
+        border-collapse: collapse;
+    
+        .row{
+          border-bottom: 3px solid #fd3075;
+        }
+    
+    
+        tr {
+          height: 11rem;
+          min-width: 31rem;
+    
+    
+          td {
+            height: 11rem;
+            width: 11rem;
+            
+            &:nth-child(1){
+              border-right: 3px solid #fd3075;
+            }
+    
+            &:nth-child(2){
+              border-right: 3px solid #fd3075;
+            }
+    
+    
+    
+    
+            button {
+              height: 100%;
+              width: 100%;
+              background: transparent;
+              border-style: none;
+              color:#fd3075;
+              font-family: 'Roboto';
+              font-size: 5rem;
+              transition: .3s;
+              
+    
+              &:hover{
+                cursor: pointer;
+              }
+    
+              &:focus{
+                outline: none;
+              }
+              
+            }
+          }
+        }
+      }
 
     .clouds {
       position: relative;
@@ -152,7 +210,7 @@ section {
     .first-detail {
       position: relative;
       top: 2000px;
-      right: 1.4%;
+      right: -36%;
 
       img {
         position: absolute;
@@ -281,4 +339,48 @@ section {
   }
 
   /*intro art container end*/
+}
+
+
+.clickedX{
+  animation: clickX .3s;
+}
+
+.clickedX text{
+  stroke: #fd3075;
+  font-size: 600px;
+  font-weight: 200px;
+  stroke-width: 5;
+  animation: xSVG_anim .3s;
+  fill: #fd3075;
+}
+
+@keyframes clickO{
+
+  0%{
+    font-size: 0rem;
+  }
+
+  100%{
+    font-size: 7rem;
+  }
+}
+
+@keyframes xSVG_anim{
+
+  0%{
+    stroke-dasharray: 0 50%;
+    fill: #1f242c;
+  }
+
+  50%{
+    fill: #1f242c;
+  }
+
+  100%{
+    fill: #fd3075;
+    stroke-dasharray: 50% 0;
+  }
+
+
 }

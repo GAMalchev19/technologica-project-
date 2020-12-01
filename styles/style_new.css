@@ -83,6 +83,58 @@ section {
   z-index: 2;
 }
 
+.site-container .game-art-container table {
+  position: absolute;
+  z-index: 669;
+  left: 50%;
+  top: 3%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-collapse: collapse;
+}
+
+.site-container .game-art-container table .row {
+  border-bottom: 3px solid #fd3075;
+}
+
+.site-container .game-art-container table tr {
+  height: 11rem;
+  min-width: 31rem;
+}
+
+.site-container .game-art-container table tr td {
+  height: 11rem;
+  width: 11rem;
+}
+
+.site-container .game-art-container table tr td:nth-child(1) {
+  border-right: 3px solid #fd3075;
+}
+
+.site-container .game-art-container table tr td:nth-child(2) {
+  border-right: 3px solid #fd3075;
+}
+
+.site-container .game-art-container table tr td button {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border-style: none;
+  color: #fd3075;
+  font-family: 'Roboto';
+  font-size: 5rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.site-container .game-art-container table tr td button:hover {
+  cursor: pointer;
+}
+
+.site-container .game-art-container table tr td button:focus {
+  outline: none;
+}
+
 .site-container .game-art-container .clouds {
   position: relative;
   z-index: 6;
@@ -170,7 +222,7 @@ section {
 .site-container .game-art-container .first-detail {
   position: relative;
   top: 2000px;
-  right: 1.4%;
+  right: -36%;
 }
 
 .site-container .game-art-container .first-detail img {
@@ -298,5 +350,66 @@ section {
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+.clickedX {
+  -webkit-animation: clickX .3s;
+          animation: clickX .3s;
+}
+
+.clickedX text {
+  stroke: #fd3075;
+  font-size: 600px;
+  font-weight: 200px;
+  stroke-width: 5;
+  -webkit-animation: xSVG_anim .3s;
+          animation: xSVG_anim .3s;
+  fill: #fd3075;
+}
+
+@-webkit-keyframes clickO {
+  0% {
+    font-size: 0rem;
+  }
+  100% {
+    font-size: 7rem;
+  }
+}
+
+@keyframes clickO {
+  0% {
+    font-size: 0rem;
+  }
+  100% {
+    font-size: 7rem;
+  }
+}
+
+@-webkit-keyframes xSVG_anim {
+  0% {
+    stroke-dasharray: 0 50%;
+    fill: #1f242c;
+  }
+  50% {
+    fill: #1f242c;
+  }
+  100% {
+    fill: #fd3075;
+    stroke-dasharray: 50% 0;
+  }
+}
+
+@keyframes xSVG_anim {
+  0% {
+    stroke-dasharray: 0 50%;
+    fill: #1f242c;
+  }
+  50% {
+    fill: #1f242c;
+  }
+  100% {
+    fill: #fd3075;
+    stroke-dasharray: 50% 0;
+  }
 }
 /*# sourceMappingURL=style_new.css.map */

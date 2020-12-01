@@ -16,7 +16,9 @@ tl.to(".game-art-container", {
     display: "none"
 }, 1).to(".sections-container", {
     display: "none"
-}, 1);
+}, 1).to(".game", {
+    display: "show"
+});
 
 const btn = document.querySelector("#game-trigger");
 btn.addEventListener("click", () => {
