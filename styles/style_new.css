@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body,
 html {
   padding: 0;
@@ -121,10 +122,10 @@ section {
   background: transparent;
   border-style: none;
   color: #fd3075;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 5rem;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .site-container .game-art-container table tr td button:hover {
@@ -161,14 +162,14 @@ section {
   position: absolute;
   height: 200px;
   bottom: 100px;
-  right: -5%;
+  right: -7%;
 }
 
 .site-container .game-art-container .clouds img:nth-child(4) {
   position: absolute;
   height: 200px;
   bottom: 550px;
-  right: -4%;
+  right: -7%;
 }
 
 .site-container .game-art-container .clouds img:nth-child(5) {
@@ -222,7 +223,7 @@ section {
 .site-container .game-art-container .first-detail {
   position: relative;
   top: 2000px;
-  right: -36%;
+  right: -40%;
 }
 
 .site-container .game-art-container .first-detail img {
@@ -353,8 +354,8 @@ section {
 }
 
 .clickedX {
-  -webkit-animation: clickX .3s;
-          animation: clickX .3s;
+  -webkit-animation: clickX 0.3s;
+          animation: clickX 0.3s;
 }
 
 .clickedX text {
@@ -362,8 +363,8 @@ section {
   font-size: 600px;
   font-weight: 200px;
   stroke-width: 5;
-  -webkit-animation: xSVG_anim .3s;
-          animation: xSVG_anim .3s;
+  -webkit-animation: xSVG_anim 0.3s;
+          animation: xSVG_anim 0.3s;
   fill: #fd3075;
 }
 

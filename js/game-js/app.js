@@ -41,14 +41,14 @@ for (let i = 0; i < btns.length; i++)
         if(btns[i].classList.contains("clickable"))
         {
             inputValues(btns[i], i);
-            winState();
+            winStateCheck();
             computer();
-            winState();
+            winStateCheck();
         }
     });
 }
 
-function reverse(val){
+let reverse = (val) => {
     if(val == 1)
         return 2;
     else
@@ -168,7 +168,7 @@ function boardFull(){
     }
 }
 
-function winState(){
+function winStateCheck(){
     if(!gameEnd){
         for(let i = 0; i < 8; i++){
             let filledSlots = [0, 0, 0], counter = 0;

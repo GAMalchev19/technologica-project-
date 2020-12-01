@@ -14,9 +14,9 @@ tl.to(".game-art-container", {
     ease: "power1.inOut"
 }, 0).to(".intro-art-container", {
     display: "none"
-}, 1).to(".sections-container", {
+}).to(".sections-container", {
     display: "none"
-}, 1).to(".game", {
+}, "-=1").to(".game", {
     display: "show"
 });
 
