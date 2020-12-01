@@ -30,8 +30,8 @@ const winPositions = [
     //diagonals
     [1 , 0, 0, 0, 1 , 0, 0, 0, 1], [ 0, 0, 1, 0, 1, 0, 1, 0, 0 ]
 ];
-let states = [];
-let state = true; // true = X // false = O
+let states = [ 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let state = 1; // 1 = X // 2 = O
 let gameEnd = false;
 
 for (let i = 0; i < btns.length; i++)
@@ -49,48 +49,117 @@ for (let i = 0; i < btns.length; i++)
 }
 
 function reverse(val){
-    return !val;
+    if(val == 1)
+        return 2;
+    else
+        return 1;
 }
 
-function inputValues(gridPosition, i)
+function inputValues(gridPosition, index)
 {
     if(!gameEnd){
-        if (state) {
+        if (state == 1) {
             gridPosition.innerHTML = "<svg viewBox='0 0 1350 600'><text x='50%' y='90%' text-anchor='middle' class='X'>X</text></svg>";
             gridPosition.classList.add("clickedX");
-            states[i] = state;
+            states[index] = state;
             state = reverse(state);
         }
         else{
                 gridPosition.innerHTML = "<span style=''>O</span>";
                 gridPosition.classList.add("clickedO");
-                states[i] = state;
+                states[index] = state;
                 state = reverse(state);
         }
         gridPosition.classList.remove("clickable");
     }  
 }
 
-function computer(){
-    if(!gameEnd){    
-            let randNum = Math.trunc(Math.random()*10)
-            //console.log(randNum);
-            if(states[randNum] === undefined && randNum != 9)
-            inputValues(btns[randNum], randNum);
-            else
-                computer();
+function computer(){ 
+    if(!gameEnd){   
+        let stagger = 0;
+        let foundSlot = false;
+        if(!foundSlot){
+            //row counter move
+            for(let i = 0; i < 3; i++){
+                if(states[0 + stagger] + states[1 + stagger] + states[2 + stagger] == 2){
+                    for(let j = 0 + stagger; j < 3 + stagger; j++){
+                        if(!foundSlot){
+                            if(states[j] == 0){
+                                inputValues(btns[j], j);
+                                foundSlot = true;
+                            }
+                        }
+                    }
+                }
+                stagger+=3;
+            }
+
+            stagger = 0;
+            //column counter move
+            for(let i = 0; i < 3; i++){
+                if(states[0 + stagger] + states[3 + stagger] + states[6 + stagger] == 2){
+                    for(let j = 0; j < 3; j++){
+                        if(!foundSlot){
+                            if(states[j+stagger] == 0){
+                                inputValues(btns[j+stagger], j+stagger);
+                                foundSlot = true;
+                            }
+                            else if(states[j+3+stagger] == 0){
+                                inputValues(btns[j+3+stagger], j+3+stagger);
+                                foundSlot = true;
+                            }
+                            else{
+                                inputValues(btns[j+6+stagger], j+6+stagger);
+                                foundSlot = true;
+                            }
+                        }
+                    }
+                }
+                stagger+=1;
+            }
+
+            stagger = 1;
+            //diagonal counter move
+            for(let i = 0; i < 2; i++){
+                if(states[stagger] + states[5] + states[10-stagger] == 2){
+                    for(let j = 0; j < 3; j++){
+                        if(!foundSlot){
+                            if(states[stagger] == 0){
+                                inputValues(btns[stagger], stagger);
+                                foundSlot = true;
+                            }
+                            else if(states[5] == 0){
+                                inputValues(btns[5], 5);
+                                foundSlot = true;
+                            }
+                            else{
+                                inputValues(btns[10-stagger], 10-stagger);
+                                foundSlot = true;
+                            }
+                            console.log("correct");
+                        }
+                    }
+                }
+                stagger+=2;
+            }
+
+            if(!foundSlot){
+                console.log("incorrect");
+                let randNum = Math.trunc(Math.random()*10)
+                //console.log(randNum);
+                if(states[randNum] === 0 && randNum != 9)
+                inputValues(btns[randNum], randNum);
+                else
+                    computer();
+            }
+        }
     }
 }
 
 function boardFull(){
-    /*states.forEach(stat => {
-        if(stat === undefined)
-            return false;
-    });
-    return true;*/
     if(!gameEnd){
         for(let i = 0; i < 9; i++){
-            if(states[i] === undefined)
+            if(states[i] === 0)
                 return false;
         }
         gameEnd = true;
@@ -101,21 +170,18 @@ function boardFull(){
 
 function winState(){
     if(!gameEnd){
-
         for(let i = 0; i < 8; i++){
-            let filledSlots = [undefined, undefined, undefined], counter = 0;
+            let filledSlots = [0, 0, 0], counter = 0;
             for(let k = 0; k < 9; k++){
                 if(winPositions[i][k] == true){
                     filledSlots[counter] = k;
                     counter++;
                 }
-                console.log(filledSlots[0]);
-            
             }
 
             for(let j = 0; j < 9; j++){
-                if(states[filledSlots[0]] == states[filledSlots[1]] && states[filledSlots[0]] == states[filledSlots[2]] && states[filledSlots[0]] !== undefined){
-                    if(states[filledSlots[0]]){
+                if(states[filledSlots[0]] == states[filledSlots[1]] && states[filledSlots[0]] == states[filledSlots[2]] && states[filledSlots[0]] !== 0){
+                    if(states[filledSlots[0]] == 1){
                         winDisplay();
                     }
                     else{
@@ -125,77 +191,7 @@ function winState(){
             }
         }
 
-        /*
-
-        //row check
-        
-        if(states[0] == states[1] && states[1] == states[2]){
-            if(states[0])
-                winDisplay();
-            else if(states[0]==false)
-                loseDisplay();
-        }
-
-        if(states[3] == states[4] && states[4] == states[5]){
-            if(states[3])
-                winDisplay();
-            else if(states[3]==false)
-                loseDisplay();
-            
-        }
-
-        if(states[6] == states[7] && states[7] == states[8]){
-            if(states[6])
-                winDisplay();
-            else if(states[6]==false)
-                loseDisplay();
-                
-        }
-
-
-        //diagonal check
-        if(states[0] == states[4] && states[4] == states[8]){
-            if(states[0])
-                winDisplay();
-            else if(states[0]==false)
-                loseDisplay();
-            
-        }
-
-        if(states[2] == states[4] && states[4] == states[6]){
-            if(states[2])
-                winDisplay();
-            else if(states[2]==false)
-                loseDisplay();
-            
-        }
-
-
-        //column check
-        if(states[0] == states[3] && states[3] == states[6]){
-            if(states[0])
-                winDisplay();
-            else if(states[0]==false)
-                loseDisplay();
-            
-        }
-
-        if(states[1] == states[4] && states[4] == states[7]){
-            if(states[1])
-                winDisplay();
-            else if(states[1]==false)
-                loseDisplay();        
-            
-        }
-
-        if(states[2] == states[5] && states[5] == states[8]){
-            if(states[2])
-                winDisplay();
-            else if(states[2]==false)
-                loseDisplay();
-            
-        }
-        */
+        boardFull();
     }   
 }
 
@@ -212,5 +208,6 @@ function loseDisplay(){
 }
 
 function drawDisplay(){
-    document.getElementById("result").innerHTML = "Draw!";
+    document.querySelector('.overlaynt').classList.add("overlay");
+    document.querySelector('.overlay_svgD').classList.add("overlaySVG_show");
 }
