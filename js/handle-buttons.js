@@ -13,3 +13,8 @@ function onArrowToIntroPress(){
     document.getElementById('arrowToAbout').style.animationDelay = ".4s";
     arrowToAbout.classList.add("arrowToAbout_shown");
 }
+
+function resetOverlay(){
+    document.querySelector('.overlaynt').classList.remove("overlay");
+    console.log("I remove overlay yes");
+}

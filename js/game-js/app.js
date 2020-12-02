@@ -199,15 +199,18 @@ function winDisplay(){
         gameEnd = true;
         document.querySelector('.overlaynt').classList.add("overlay");
         document.querySelector('.overlay_svgV').classList.add("overlaySVG_show");
+        document.querySelector('body').classList.add("hidden-overflow");
 }
 
 function loseDisplay(){
         gameEnd = true;
         document.querySelector('.overlaynt').classList.add("overlay");
         document.querySelector('.overlay_svgL').classList.add("overlaySVG_show");
+        document.querySelector('body').classList.add("hidden-overflow");
 }
 
 function drawDisplay(){
     document.querySelector('.overlaynt').classList.add("overlay");
     document.querySelector('.overlay_svgD').classList.add("overlaySVG_show");
+    document.querySelector('body').classList.add("hidden-overflow");
 }

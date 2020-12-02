@@ -22,7 +22,19 @@
 
       <div class="game-art-container">
 
+
+        <div id="restart-phantom">YES</div>
+
         <table  class="game">
+
+          <div class="overlaynt">
+            <svg viewBox="0 0 1350 600">
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgV">Victory</text>
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgL">Defeat</text>
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgD">Draw</text>
+            </svg>
+            <a href="#restart-phantom" onclick="resetOverlay()">bouton</a>
+          </div>
 
           <tr class="test">
             <td class="row"><button class="btn"></button></td>
@@ -134,6 +146,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.7.1/rellax.min.js"></script>
     <script src="js/parallax_logic.js"></script>
     <script src="js/handle-scrolling.js"></script>
+    <script src="js/handle-buttons.js"></script>
     <script src="js/game-js/app.js"></script>
 
 

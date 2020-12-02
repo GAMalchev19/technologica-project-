@@ -2,15 +2,15 @@ let tl = gsap.timeline({paused: true});
 let dur = 3;
 tl.to(".game-art-container", {
     duration: dur,
-    y: "215vh",
+    y: "315vh",
     ease: "power1.inOut"
 }).to(".intro-art-container", {
     duration: dur,
-    y: "100vh",
+    y: "300vh",
     ease: "power1.inOut"
 }, 0).to(".sections-container", {
     duration: dur,
-    y: "100vh",
+    y: "300vh",
     ease: "power1.inOut"
 }, 0).to(".intro-art-container", {
     display: "none"
