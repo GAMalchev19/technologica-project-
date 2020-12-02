@@ -15,12 +15,25 @@ tl.to(".game-art-container", {
 }, 0).to(".intro-art-container", {
     display: "none"
 }).to(".sections-container", {
+    duration: 1,
+    opacity: 0,
     display: "none"
 }, "-=1").to(".game", {
     display: "show"
-});
+}).to("#landing-arrow", {
+    display: "none"
+}, -1);
 
 const btn = document.querySelector("#game-trigger");
 btn.addEventListener("click", () => {
     tl.play();
+});
+
+const arrow = document.querySelector("#game-button");
+arrow.addEventListener("click", () => {
+    tl.reverse();
+    setTimeout(function() {
+        location.reload();
+      }, 3550);
+    
 });

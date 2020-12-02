@@ -19,5 +19,4 @@ function resetOverlay(){
     document.querySelector('.overlay_svgV').classList.remove("overlaySVG_show");
     document.querySelector('.overlay_svgL').classList.remove("overlaySVG_show");
     document.querySelector('.overlay_svgD').classList.remove("overlaySVG_show");
-    console.log("I remove overlay yes");
 }

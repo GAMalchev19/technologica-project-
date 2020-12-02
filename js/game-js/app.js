@@ -1,26 +1,4 @@
-/*
-const btns = document.querySelectorAll('.btn');
-
-btns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        console.log("hi");
-        btn.innerHTML = "X";
-    })
-});
-*/
-
-/*
-const btns = document.getElementsByClassName('btn');
-
-btns.forEach(item => {
-    item.AddEventListener("click", item => {
-        document.item.innerHTML = "X";
-    })
-});
-*/
-
-
-
+// Declarations
 const btns = document.querySelectorAll('.btn');
 const winPositions = [
     //rows
@@ -34,9 +12,10 @@ let states = [ 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let state = 1; // 1 = X // 2 = O
 let gameEnd = false;
 
+// Event listeners
 document.getElementById("restartButton").addEventListener("click", restartGame);
 
-
+// Main game loop
 for (let i = 0; i < btns.length; i++)
 {
     btns[i].classList.add("clickable");
@@ -58,6 +37,7 @@ let reverse = (val) => {
         return 1;
 }
 
+// Visualising board state
 function inputValues(gridPosition, index)
 {
     if(!gameEnd){
@@ -88,6 +68,7 @@ function inputValues(gridPosition, index)
     }  
 }
 
+// Computer algorithm
 function computer(){ 
     if(!gameEnd){   
         let stagger = 0;
@@ -176,6 +157,7 @@ function computer(){
     }
 }
 
+// Check whether board is full
 function boardFull(){
     if(!gameEnd){
         for(let i = 0; i < 9; i++){
@@ -215,6 +197,8 @@ function winStateCheck(){
     }   
 }
 
+
+//Displaying results
 function winDisplay(){
     gameEnd = true;
     document.querySelector('.overlaynt').classList.add("overlay");
@@ -243,4 +227,5 @@ function restartGame(){
         inputValues(btns[i],i);
     }
     state = 1;
+    document.querySelector('body').classList.remove("hidden-overflow");
 }

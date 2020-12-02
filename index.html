@@ -1,101 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 2048</title>
+    <title>projectXOTO</title>
 
-
-    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles/style.css"/>
-
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
-  
   <body>
-
-    <div class="nav_overlay">
-      <a href="#about"  class="arrowToAbout arrowToAbout_shown" id="arrowToAbout"onclick="onArrowToAboutPress()"><img src="images/arrow.png"></a>
-      <a href="#intro"  class="arrowToIntro" onclick="onArrowToIntroPress()"><img src="images/arrow.png"></a>
-    </div>
-
-    <div class="site_container">
+    <div class="site-container">
+      <div class="sections-container">
 
 
-      <!-- start of page one -->
-      <div class="section">
+        <section class="intro">
+          <h1><span>XO</span><span>TO</span></h1>
+          <button id="game-trigger">PLAY</button>
+        </section>
 
-        <section id="intro">
+        <img id="landing-arrow" src="images/arrow.png">
+
+        <section class="about">
+          <h1>About</h1>
+
+          <div class="card-container">
+            <div class="card">
+              <img src="images/preview-imgs/Savov.png">
+
+              <p>Our art designer and lead front end developer. Excelling at photoshop, CSS and HTML development, all the beauty to our site was brought and thought of by him. With his skillset, our vision of the beautiful rendition of the classic game Tic Tac Toe was realized, adding his own unique touch to every element of the page, he was a crucial part of the development process.</p>
+            </div>
+            <div class="card">
+              <img src="images/preview-imgs/Simeonov.png">
+
+              <p>Giving the brain to the beautiful externals, he is the lead backend developer. Being experienced in C++ and JS, he used on-point critical thinking to find shortcuts in the algorithms, and shave off the precious seconds of computing time. Most, if not all, of the logic behind the site sits on his shoulders and he became yet another critical and dynamic cog in the development.</p>
+            </div>
+            <div class="card">
+              <img src="images/preview-imgs/Peshev.png">
+
+              <p>Unlike anyone else in our team lineup, he has extensive knowledge of frontend and backend development, being experienced with HTML, SCSS and JS he often gave everyone the necessary advice to carry out the ideas each and every single one of us had. Although he mainly partook in frontend development, he was a necessary piece of the puzzle and a central part of the team.</p>
+            </div>
+            <div class="card">
+              <div class="img-container">
+                <img src="images/preview-imgs/Malchev.png">
+                <p>&</p>
+                <img src="images/preview-imgs/Nanev.png">
+              </div>
+              <p>With Jivko Nanev and Georgi Malchev's help, our team managed to pull through and give unexpected results. Their immense part of keeping the team together and coordinating work was crucial to our success in completing the task on our hands. Their general guidance and support was useful throughout and never failed to amaze us with it's accuracy and punctuality. They were truly a big part of our project.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="game-art-container">
+
+        <table  class="game"> 
+
+          <div class="overlaynt">
+            <svg viewBox="0 0 1350 600">
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgV overlayIG">Victory</text>
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgL overlayIG">Defeat</text>
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgD overlayIG">Draw</text>
+            </svg>
+            <a onclick="resetOverlay()" id="restartButton">ᴘʟᴀʏ ᴀɢᴀɪɴ</a>
+          </div>
+
+          <tr class="test">
+            <td class="row"><button class="btn"></button></td>
+            <td class="row"><button class="btn"></button></td>
+            <td class="row"><button class="btn"></button></td>
+          </tr>
+  
+          <tr>
+            <td class="row"><button class="btn"></button></td>
+            <td class="row"><button class="btn"></button></td>
+            <td class="row"><button class="btn"></button></td>
+          </tr>
+  
+          <tr>
+            <td><button class="btn"></button></td>
+            <td><button class="btn"></button></td>
+            <td><button class="btn"></button></td>
+          </tr>
+        </table>
+
+        <button id="game-button"><img src="images/arrow.png"></button>
+
+        <img src="images/svgs/Planet.svg" class="Planet  parallax-layer" data-speed="-0.3"/>
+
+        <div class="clouds">
+          <img src="images/svgs/Cloud1.svg" class="parallax-layer" data-speed="3.2">
+          <img src="images/svgs/Cloud2.svg" class="parallax-layer" data-speed="4.1">
+          <img src="images/svgs/Cloud4.svg" class="parallax-layer" data-speed="3.1">
+          <img src="images/svgs/Cloud5.svg" class="parallax-layer" data-speed="3.5">
+          <img src="images/svgs/Cloud7.svg" class="parallax-layer" data-speed="5">
+          <img src="images/svgs/Cloud8.svg" class="parallax-layer" data-speed="2.7">
+          <img src="images/svgs/Cloud9.svg" class="parallax-layer" data-speed="1.5">
+          <img src="images/svgs/Cloud10.svg" class="parallax-layer" data-speed="3.3">
+        </div>
+
+        <div class="second-detail">
+          <img src="images/svgs/SecondDetail-background.svg" class="parallax-layer" data-speed="1"/>
+          <img src="images/svgs/SecondDetail-midground.svg" class="parallax-layer" data-speed="1.5"/>
+          <img src="images/svgs/SecondDetail-foreground.svg" class="parallax-layer" data-speed="2"/>
+        </div>
+
+        <div class="first-detail">
+          <img src="images/svgs/Intro/MainDetail-backgroundv2.svg" class="parallax-layer" data-speed="1"/>
+          <img src="images/svgs/Intro/MainDetail-midgroundv2.svg" class="parallax-layer" data-speed="1.5"/>
+          <img src="images/svgs/Intro/MainDetail-foregroundv2.svg" class="parallax-layer" data-speed="2"/>
+        </div>
+
+        <div class="stars">
+          <img id="star-bg" src="images/svgs/Stars-background.svg" class="parallax-layer" data-speed="0.2"/>
+          <img id="star-mg" src="images/svgs/Stars-midground.svg" class="parallax-layer" data-speed="0.5"/>
+          <img id="star-fr" src="images/svgs/Stars-foreground.svg" class="parallax-layer" data-speed="0.8"/>
+        </div>
+
+
+      </div>
+
+
+
+
+      <div class="intro-art-container">
 
           <div class="background">
-            <h1 id="X">X</h1>
-            <h1 id="O">O</h1>
-          </div>
+            <img src="images/svgs/Intro/Background.svg">
 
+            <img id="stars" src="images/svgs/Intro/Stars.svg">
 
-          <a href="html/game.html" class="button_play">Play</a>
-
-          
-          <div class="header_wrapper">
-            <div class="number_holder"><p id="two" class="number"  data-speed="2.5">X</p></div>
-            <div class="number_holder"><p id="zero" class="number" data-speed="1.2">O</p></div>
-            <div class="number_holder"><p id="four" class="number" data-speed="1.2">X</p></div>
-            <div class="number_holder"><p id="eight" class="number" data-speed="2.5">O</p></div>
-          </div>
-
-
-
-
-        </section>
-
-      </div>
-      <!-- end of page one -->
-
-      <!-- page two -->
-      <div class="section">
-        <section id="about">
-
-          <div class="header">
-            <h1>About</h1>
-          </div>
-
-
-          <div class="content">
-            <div class="text">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eum totam accusantium assumenda consectetur voluptatem inventore velit voluptate at. Nihil iusto tenetur voluptates necessitatibus consectetur praesentium animi officiis minima numquam.</p>
-
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eum totam accusantium assumenda consectetur voluptatem inventore velit voluptate at. Nihil iusto tenetur voluptates necessitatibus consectetur praesentium animi officiis minima numquam.</p>
-
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eum totam accusantium assumenda consectetur voluptatem inventore velit voluptate at. Nihil iusto tenetur voluptates necessitatibus consectetur praesentium animi officiis minima numquam.</p>
+            <div class="moon">
+              <img data-rellax-speed="-6.5" src="images/svgs/Intro/Moon-background.svg">
+              <img data-rellax-speed="-6" src="images/svgs/Intro/Moon-midground.svg">
+              <img data-rellax-speed="-5.5" src="images/svgs/Intro/Moon-foreground.svg">
             </div>
 
-            <div class="pictures">
 
-              <div></div>
-              <div></div>
-              <div></div>
 
-            </div>
+            <img class="rellax" data-rellax-speed="-5" src="images/svgs/Intro/Background3.svg">
+            <img class="rellax" data-rellax-speed="-4.5" src="images/svgs/Intro/Background2.svg">
+            <img class="rellax"  data-rellax-speed="-4" src="images/svgs/Intro/Background1.svg">
           </div>
 
-        </section>
+
+
+          <div class="midground">
+            <img class="rellax" data-rellax-speed="-3.5" src="images/svgs/Intro/Midground3.svg">
+            <img class="rellax" data-rellax-speed="-3" src="images/svgs/Intro/Midground2.svg">
+            <img class="rellax" data-rellax-speed="-2.5" src="images/svgs/Intro/Midground1.svg">
+          </div>
+
+
+        
+          <div class="foreground">
+            <img class="rellax" data-rellax-speed="-2" src="images/svgs/Intro/Foreground3.svg">
+            <img class="rellax" data-rellax-speed="-1.5" src="images/svgs/Intro/Foreground2.svg">
+            <img class="rellax"  data-rellax-speed="-1"src="images/svgs/Intro/Foreground1.svg">
+          </div>
+
+
       </div>
+
+
+
+
+
+
+
+
 
 
     </div>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-    <script src="js/animations.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.7.1/rellax.min.js"></script>
     <script src="js/parallax_logic.js"></script>
+    <script src="js/handle-scrolling.js"></script>
+    <script src="js/handle-buttons.js"></script>
+    <script src="js/game-js/app.js"></script>
 
-    <script src="js/handle_buttons.js"></script>
+
 
   </body>
 </html>
