@@ -34,6 +34,9 @@ let states = [ 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let state = 1; // 1 = X // 2 = O
 let gameEnd = false;
 
+document.getElementById("restartButton").addEventListener("click", restartGame);
+
+
 for (let i = 0; i < btns.length; i++)
 {
     btns[i].classList.add("clickable");
@@ -63,14 +66,25 @@ function inputValues(gridPosition, index)
             gridPosition.classList.add("clickedX");
             states[index] = state;
             state = reverse(state);
+            gridPosition.classList.remove("clickable");
         }
-        else{
-                gridPosition.innerHTML = "<span style=''>O</span>";
-                gridPosition.classList.add("clickedO");
-                states[index] = state;
-                state = reverse(state);
+        else if(state == 2) {
+            gridPosition.innerHTML = "<span style=''>O</span>";
+            gridPosition.classList.add("clickedO");
+            states[index] = state;
+            state = reverse(state);
+            gridPosition.classList.remove("clickable");
         }
-        gridPosition.classList.remove("clickable");
+        else {
+            console.log("yes");
+            gridPosition.innerHTML = "<span style=''></span>";
+            if(gridPosition.classList.contains("clickedO"))
+                gridPosition.classList.remove("clickedO");
+            else
+                gridPosition.classList.remove("clickedX");
+            states[index] = 0;
+            gridPosition.classList.add("clickable");
+        }
     }  
 }
 
@@ -82,11 +96,13 @@ function computer(){
             //row counter move
             for(let i = 0; i < 3; i++){
                 if(states[0 + stagger] + states[1 + stagger] + states[2 + stagger] == 2){
-                    for(let j = 0 + stagger; j < 3 + stagger; j++){
-                        if(!foundSlot){
-                            if(states[j] == 0){
-                                inputValues(btns[j], j);
-                                foundSlot = true;
+                    if((states[0 + stagger] == 0 || states[0 + stagger] == 1) && (states[1 + stagger] == 0 || states[1 + stagger] == 1) && (states[2 + stagger] == 0 || states[2 + stagger] == 1)) {
+                        for(let j = 0 + stagger; j < 3 + stagger; j++){
+                            if(!foundSlot){
+                                if(states[j] == 0){
+                                    inputValues(btns[j], j);
+                                    foundSlot = true;
+                                }
                             }
                         }
                     }
@@ -98,19 +114,21 @@ function computer(){
             //column counter move
             for(let i = 0; i < 3; i++){
                 if(states[0 + stagger] + states[3 + stagger] + states[6 + stagger] == 2){
-                    for(let j = 0; j < 3; j++){
-                        if(!foundSlot){
-                            if(states[j+stagger] == 0){
-                                inputValues(btns[j+stagger], j+stagger);
-                                foundSlot = true;
-                            }
-                            else if(states[j+3+stagger] == 0){
-                                inputValues(btns[j+3+stagger], j+3+stagger);
-                                foundSlot = true;
-                            }
-                            else{
-                                inputValues(btns[j+6+stagger], j+6+stagger);
-                                foundSlot = true;
+                    if((states[0 + stagger] == 0 || states[0 + stagger] == 1) && (states[3 + stagger] == 0 || states[3 + stagger] == 1) && (states[6 + stagger] == 0 || states[6 + stagger] == 1)) {
+                        for(let j = 0; j < 3; j++){
+                            if(!foundSlot){
+                                if(states[j+stagger] == 0){
+                                    inputValues(btns[j+stagger], j+stagger);
+                                    foundSlot = true;
+                                }
+                                else if(states[j+3+stagger] == 0){
+                                    inputValues(btns[j+3+stagger], j+3+stagger);
+                                    foundSlot = true;
+                                }
+                                else{
+                                    inputValues(btns[j+6+stagger], j+6+stagger);
+                                    foundSlot = true;
+                                }
                             }
                         }
                     }
@@ -122,21 +140,23 @@ function computer(){
             //diagonal counter move
             for(let i = 0; i < 2; i++){
                 if(states[stagger] + states[5] + states[10-stagger] == 2){
-                    for(let j = 0; j < 3; j++){
-                        if(!foundSlot){
-                            if(states[stagger] == 0){
-                                inputValues(btns[stagger], stagger);
-                                foundSlot = true;
+                    if((states[stagger] == 0 || states[stagger] == 1) && (states[5] == 0 || states[5] == 1) && (states[10-stagger] == 0 || states[10-stagger] == 1)) {
+                        for(let j = 0; j < 3; j++){
+                            if(!foundSlot){
+                                if(states[stagger] == 0){
+                                    inputValues(btns[stagger], stagger);
+                                    foundSlot = true;
+                                }
+                                else if(states[5] == 0){
+                                    inputValues(btns[5], 5);
+                                    foundSlot = true;
+                                }
+                                else{
+                                    inputValues(btns[10-stagger], 10-stagger);
+                                    foundSlot = true;
+                                }
+                                //console.log("correct");
                             }
-                            else if(states[5] == 0){
-                                inputValues(btns[5], 5);
-                                foundSlot = true;
-                            }
-                            else{
-                                inputValues(btns[10-stagger], 10-stagger);
-                                foundSlot = true;
-                            }
-                            console.log("correct");
                         }
                     }
                 }
@@ -144,7 +164,7 @@ function computer(){
             }
 
             if(!foundSlot){
-                console.log("incorrect");
+                //console.log("incorrect");
                 let randNum = Math.trunc(Math.random()*10)
                 //console.log(randNum);
                 if(states[randNum] === 0 && randNum != 9)
@@ -196,21 +216,31 @@ function winStateCheck(){
 }
 
 function winDisplay(){
-        gameEnd = true;
-        document.querySelector('.overlaynt').classList.add("overlay");
-        document.querySelector('.overlay_svgV').classList.add("overlaySVG_show");
-        document.querySelector('body').classList.add("hidden-overflow");
+    gameEnd = true;
+    document.querySelector('.overlaynt').classList.add("overlay");
+    document.querySelector('.overlay_svgV').classList.add("overlaySVG_show");
+    document.querySelector('body').classList.add("hidden-overflow");
 }
 
 function loseDisplay(){
-        gameEnd = true;
-        document.querySelector('.overlaynt').classList.add("overlay");
-        document.querySelector('.overlay_svgL').classList.add("overlaySVG_show");
-        document.querySelector('body').classList.add("hidden-overflow");
+    gameEnd = true;
+    document.querySelector('.overlaynt').classList.add("overlay");
+    document.querySelector('.overlay_svgL').classList.add("overlaySVG_show");
+    document.querySelector('body').classList.add("hidden-overflow");
 }
 
 function drawDisplay(){
     document.querySelector('.overlaynt').classList.add("overlay");
     document.querySelector('.overlay_svgD').classList.add("overlaySVG_show");
     document.querySelector('body').classList.add("hidden-overflow");
+}
+
+function restartGame(){
+    gameEnd = 0;
+    for(let i = 0; i < btns.length; i++){
+        states[i] = 0;
+        state = 0;
+        inputValues(btns[i],i);
+    }
+    state = 1;
 }

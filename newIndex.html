@@ -22,18 +22,15 @@
 
       <div class="game-art-container">
 
-
-        <div id="restart-phantom">YES</div>
-
         <table  class="game">
 
           <div class="overlaynt">
             <svg viewBox="0 0 1350 600">
-              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgV">Victory</text>
-              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgL">Defeat</text>
-              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgD">Draw</text>
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgV overlayIG">Victory</text>
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgL overlayIG">Defeat</text>
+              <text x="50%" y="50%" text-anchor="middle" fill="transparent" class="overlay_svgD overlayIG">Draw</text>
             </svg>
-            <a href="#restart-phantom" onclick="resetOverlay()">bouton</a>
+            <a onclick="resetOverlay()" id="restartButton">bouton</a>
           </div>
 
           <tr class="test">
@@ -54,6 +51,8 @@
             <td><button class="btn"></button></td>
           </tr>
         </table>
+
+        <h1 id="score"></h1>
 
         <img src="images/svgs/Planet.svg" class="Planet  parallax-layer" data-speed="-0.3"/>
 
