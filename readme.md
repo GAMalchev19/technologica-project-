@@ -1,3 +1,4 @@
+![XOTO Logo](images/AURORAGAMES.png)
 # Project XOTO
 
 Project XOTO is a visualy appealing, redesinged, modern version of the classing game tic tac toe.
