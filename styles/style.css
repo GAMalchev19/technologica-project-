@@ -248,7 +248,7 @@ section {
 
 .site-container .game-art-container .overlaynt a {
   position: absolute;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   cursor: pointer;
   top: 70%;
   left: 50%;
