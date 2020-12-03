@@ -162,6 +162,12 @@ section {
   height: 120px;
 }
 
+.site-container .sections-container .about .card-container .card h2 {
+  font-size: 27.77px;
+  color: #ee0460;
+  font-family: "Roboto";
+}
+
 .site-container .sections-container .about .card-container .card p {
   font-size: 17px;
   text-align: center;
